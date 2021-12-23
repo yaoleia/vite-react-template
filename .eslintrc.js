@@ -27,6 +27,7 @@ module.exports = {
   ],
   plugins: ['simple-import-sort', 'prettier'],
   rules: {
+    'react-hooks/exhaustive-deps': 0,
     'no-unused-vars': 0,
     'no-extra-boolean-cast': 0,
     'prettier/prettier': ['error', {}, { usePrettierrc: true }],

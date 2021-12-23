@@ -12,5 +12,11 @@ const proxy: Record<string, string | ProxyOptions> = {
     rewrite: (path) => path.replace(/^\/api/, ''),
     // 更多请参看：https://cn.vitejs.dev/config/#server-proxy
   },
+  '/cerana-api': {
+    target: 'http://10.18.103.179:8610',
+    changeOrigin: true,
+    secure: false,
+    rewrite: (path) => path.replace(/^\/cerana-api/, ''),
+  },
 };
 export default proxy;

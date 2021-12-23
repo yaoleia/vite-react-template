@@ -1,12 +1,15 @@
 import React, { FC, useEffect } from 'react';
+import { observer } from 'mobx-react';
+import { useStore } from '@/hooks';
+import { Button } from 'antd';
 import SvgComponent from './components/svgIcon';
 import styles from './app.module.scss';
-import { environment } from './utils/varbile';
-import { Button } from 'antd';
 
-const App: FC = () => {
+const App: FC = observer(() => {
+  const { timerStore, userStore } = useStore();
+
   useEffect(() => {
-    console.log(`environmentVariable()`, environment());
+    userStore.getUserInfo();
   }, []);
 
   return (
@@ -14,8 +17,10 @@ const App: FC = () => {
       <h2>Welcome to vite-react-template</h2>
       <SvgComponent iconClass="logon" fontSize="30px" />
       <Button type="primary">Primary Button</Button>
+      <div>{userStore.userInfo?.name}</div>
+      <div>{timerStore.secondsPassed}</div>
     </div>
   );
-};
+});
 
 export default App;
