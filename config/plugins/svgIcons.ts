@@ -6,7 +6,7 @@ import path from 'path';
 export default function configSvgIcons() {
   return viteSvgIcons({
     // 指定需要缓存的图标文件夹
-    iconDirs: [path.resolve(process.cwd(), 'src/icons')],
+    iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
     // 指定symbolId格式
     symbolId: 'icon-[dir]-[name]',
   });

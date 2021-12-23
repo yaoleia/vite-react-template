@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, Method, ResponseType } from 'axios';
-import { toast } from '../utils/function';
+import { toast } from '@/utils/function';
 
 axios.defaults.withCredentials = true;
 
