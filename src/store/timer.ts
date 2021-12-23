@@ -1,9 +1,19 @@
-import { observable } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 
-export const timerStore = observable({
-  secondsPassed: 0,
-});
+class TimerStore {
+  secondsPassed = 0;
+
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  increaseTimer() {
+    this.secondsPassed++;
+  }
+}
+
+export const timerStore = new TimerStore();
 
 setInterval(() => {
-  timerStore.secondsPassed++;
+  timerStore.increaseTimer();
 }, 1000);
