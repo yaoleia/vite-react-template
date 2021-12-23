@@ -1,12 +1,12 @@
 import React, { FC, useEffect } from 'react';
 import SvgComponent from './components/svgIcon';
 import styles from './app.module.scss';
-import { environmentVariable } from './utils';
+import { environment } from './utils/varbile';
 import { Button } from 'antd';
 
 const App: FC = () => {
   useEffect(() => {
-    console.log(`environmentVariable()`, environmentVariable());
+    console.log(`environmentVariable()`, environment());
   }, []);
 
   return (

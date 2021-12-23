@@ -1,5 +1,4 @@
 /**
- * @author lgf
  * @description vite的插件配置文件
  */
 import { Plugin } from 'vite';
